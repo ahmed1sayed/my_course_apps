@@ -34,7 +34,13 @@ hel000000000000
  3.create branch
  4.code....
  5.commit or commit&&push
+6.check out master
+7.update master
+8.check out your local branch
+9.check out master
+10.push
 
+helloomeeeeeeeeeeeeaaaaaaaaaaaaaaaaaaaww
 
  */
 
