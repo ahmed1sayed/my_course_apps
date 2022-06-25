@@ -21,6 +21,22 @@ import 'news_app/logic/app_cubit.dart';
 import 'news_app/logic/app_states.dart';
 import 'news_app/logic/web_services.dart';
 import 'news_app/pages/home_page.dart';
+/* echo "# udmy_responsive" >> README.md
+ git init
+ git add README.md
+ git commit -m "first commit"
+ git branch -M main
+ git remote add origin https://github.com/ahmed1sayed/udmy_responsive.git
+ git push -u origin main
+hel000000000000
+ 1.check out master
+ 2.update master
+ 3.create branch
+ 4.code....
+ 5.commit or commit&&push
+
+
+ */
 
  Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
    // If you're going to use other Firebase services in the background, such as Firestore,
@@ -145,13 +161,6 @@ import 'package:intl/intl.dart';
 import 'package:splash/bloc/cubit.dart';
 import 'package:splash/bloc/states.dart';
 
-echo "# udmy_responsive" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ahmed1sayed/udmy_responsive.git
-git push -u origin main
 
 
 
