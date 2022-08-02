@@ -157,6 +157,10 @@ if(state is LoginSuccessState){
                       state is! LoginLoadingState?
                          CustomButton( title: 'Login',onTap: ()   {
                            if (formKey.currentState!.validate())  {
+
+
+
+
                         LoginCubit.get(context).login(email: emailController.text, password: passController.text);
 
                             }}

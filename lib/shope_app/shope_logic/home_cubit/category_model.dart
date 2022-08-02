@@ -12,6 +12,7 @@ late CategoryData data;
 class CategoryData{
   late int currentPage;
   late List<DataList>data=[];
+
 /*
   late int first_page_url;
   late int from;

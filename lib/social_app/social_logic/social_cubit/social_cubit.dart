@@ -30,6 +30,7 @@ class SocialCubit extends Cubit<SocialState> {
     emit(SocialLoadingState());
     FirebaseFirestore.instance.collection('user').doc(uId).get().then((value) {
       userModel = UserModel.fromJson(value.data());
+      print(value.data().toString());
        emit(SocialSuccessState(uId));
     }).catchError((error) {
       print(error.toString());
@@ -89,6 +90,7 @@ class SocialCubit extends Cubit<SocialState> {
         for (var element in value.docs) {
           if(element.data()['id']!=userModel!.id){
             users.add(UserModel.fromJson(element.data()) );
+
           }
         }
 

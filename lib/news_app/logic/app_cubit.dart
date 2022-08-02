@@ -115,6 +115,9 @@ await
 
    void changeBottomNavBar(int index)async{
     currentindex =index;
+    if(index==0) {
+      getBusiness();
+    }
     if(index==1) {
       getSport();
     }

@@ -21,7 +21,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<SocialCubit,SocialState>(builder: (context,state){
      var userModel= SocialCubit.get(context).userModel;
-      return state is ! SocialLoadingState? SingleChildScrollView(
+      return /*userModel!=null&&*/ state is ! SocialLoadingState? SingleChildScrollView(
         child: Column(
             children: [
               SizedBox(height: 250,

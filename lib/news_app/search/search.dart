@@ -34,7 +34,7 @@ class _SearchScreenState extends State<SearchScreen> {
             Padding(padding: const EdgeInsets.all(20),
               child: TextFormField(
                 onChanged: (val) {
-                 // AppCubit.get(context).getSearch(value: val);
+                 AppCubit.get(context).getSearch(value: val);
                 },
                 controller: searchController,
                 keyboardType: TextInputType.text,

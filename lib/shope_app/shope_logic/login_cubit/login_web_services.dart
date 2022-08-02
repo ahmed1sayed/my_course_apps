@@ -48,7 +48,7 @@ static Future<Response> putData({required String url,
   required Map<String,dynamic> data,
   String lang="ar",
   required String token}) async {
-  //Future.delayed(const Duration(milliseconds: 500), () => dio.get(url,queryParameters: query));
+  // Future.delayed(const Duration(milliseconds: 500), () => dio?.get(url,queryParameters: query));
   dio?.options.headers={
     "Content-Type":"application/json",
     "lang":lang,

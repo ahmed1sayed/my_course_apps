@@ -44,17 +44,18 @@ helloomeeeeeeeeeeeeaaaaaaaaaaaaaaaaaaaww
 
  */
 
- Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+/* Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
    // If you're going to use other Firebase services in the background, such as Firestore,
    // make sure you call `initializeApp` before using other Firebase services.
 
    print("+++++++++++++++++++++++Handling a background message: ${message.data.toString()}");
- }
+ }*/
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  if(Platform.isWindows){
+  await Firebase.initializeApp();
+ /*  if(Platform.isWindows){
     await DesktopWindow.setMinWindowSize(const Size(350,350));
-  }
+  }*/
  /*  await Firebase.initializeApp();
    var token= await FirebaseMessaging.instance.getToken();
    print('=================+++++++++'+token!);
@@ -82,10 +83,10 @@ NotificationSettings settings=await messaging.requestPermission(
 print('user granted permission: ${settings.authorizationStatus}');*/
 /*  Bloc.observer=MyBlocObserver();*/
   WebServices.init();
-  LoginWebServices.init();
+  // LoginWebServices.init();
   await CacheHelper.init();
   Widget? widget;
-bool? isDark=CacheHelper.getData(key: 'isDark');
+bool? isDark=CacheHelper.getData(key: 'isDark')??false;
   //bool onBoarding=CacheHelper.getData(key: 'onBoarding')!=null;
 
     // token=CacheHelper.getData(key: 'token')??'null';
@@ -111,7 +112,7 @@ if(uId != ''){
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key,required this.isDark,required this.startingWidget, /*  required this.onBoarding*/}) : super(key: key);
-final bool? isDark;
+  final bool? isDark;
   // final bool  onBoarding;
   final   Widget? startingWidget ;
   // This widget is the root of your application.
@@ -127,16 +128,16 @@ final bool? isDark;
         BlocProvider(
         create: (BuildContext context)=>AppCubit()..getBusiness()..getSearch(),
         ),
-       BlocProvider(
+    /*    BlocProvider(
          create: (BuildContext context)=>SearchCubit()..getSearch(),
-       ),
-      /*  BlocProvider(
-        create: (BuildContext context)=>AppCubit()..changeTheme(fromShared: isDark!),),*/
-       BlocProvider(create: (BuildContext context)=>HomeCubit()..getHomeData()..getCategoryData()..getFavoriteData()..getUserData()
-       )
+       ),*/
+   BlocProvider(
+        create: (BuildContext context)=>AppCubit()..changeTheme(fromShared: isDark!),),
+/*       BlocProvider(create: (BuildContext context)=>HomeCubit()..getHomeData()..getCategoryData()..getFavoriteData()..getUserData()
+       )*/
      ],
-      /*child: BlocProvider(
-        create: (BuildContext context)=>AppCubit()..getBusiness()..changeTheme(fromShared: isDark!),*/
+      child: BlocProvider(
+        create: (BuildContext context)=>AppCubit()..getBusiness()..changeTheme(fromShared: isDark!),
         child: BlocConsumer<AppCubit, AppStates>(
             listener: (context, state) {
             },
@@ -149,13 +150,13 @@ final bool? isDark;
                 title: 'work shop',
                 theme:lightTheme,
                 darkTheme: darkTheme,
-                home: const NativeCode()
+                home:startingWidget
                 /*const SocialLoginScreen()startingWidget*/ ,
               );
             }
         ),
 
-    );
+    ));
   }
 }
 
@@ -344,6 +345,12 @@ class Home extends StatelessWidget {
 }
 
 
-
+echo "# my_course_apps" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ahmed1sayed/my_course_apps.git
+git push -u origin main
 */
 //-------------------------------------------------------------//
